@@ -76,7 +76,7 @@ namespace WilderMinds.RssSyndication
 
         if (item.Link != null) itemElement.Add(new XElement("link", item.Link.AbsoluteUri));
 
-        itemElement.Add(new XElement("description", item.Body));
+        itemElement.Add(new XElement("description", $"<![CDATA[{item.Body}]]>"));
 
         if (item.Author != null) itemElement.Add(new XElement("author", $"{item.Author.Email} ({item.Author.Name})"));
 
